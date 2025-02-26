@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+<style>
+    .photo {
+        height: 532px;
+        width: 100%;
+    }
+    @media (max-width: 768px) {
+        .photo{
+            width: 390px;
+        }
+    }
+</style>
+<body>
+    <img src="/static/images/khata.jpg" alt="Khata Book" class="photo">
+</body>
+{% endblock %}

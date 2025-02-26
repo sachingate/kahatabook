@@ -1,0 +1,68 @@
+{%extends 'index.html'%}
+{%block content%}
+<style>
+    body{
+        background-color: lightblue;
+    }
+    .data-container{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 96%;
+            max-width: 1000px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .h1 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+</style>
+<div class="data-container">
+    <h1 class="h1">Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Receiver Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in sachin %}
+            <tr>
+                <td>{{ entry['receiver_name'] }}</td>
+                <td>{{ entry['amount'] }}</td>
+                <td>{{ entry['date'] }}</td>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{%endblock%}

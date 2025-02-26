@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khata Book</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            box-sizing: border-box;
+        }
+        #ram {
+            text-decoration: none;
+            font-size: 19px;
+            font-weight: bold;
+            color: orangered;
+        }
+        .navbar {
+            display: flex;
+            gap: 55%;
+            background-color: black;
+            padding: 20px 10px;
+        }
+        #ram:hover {
+            color: greenyellow;
+            text-decoration: underline;
+            transition: 1.5s;
+        }
+        .p {
+            color: white;
+            font-size: 23px;
+            font-weight: 500;
+        }
+        .p2 {
+            color: red;
+            font-size: 23px;
+            font-weight: 900;
+        }
+        #pic{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .shyam {
+            display: flex;
+            justify-content: end;
+            gap: 95px;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                width: 390px;
+                gap: 50%;
+            }
+            .navbar .p {
+                font-size: 12px;
+            }
+            .navbar .p2 {
+                font-size: 12px;
+            }
+            .shyam {
+                display: flex;
+                justify-content: end;
+                gap: 20px;
+            }
+            .shyam #ram {
+                text-decoration: none;
+                font-size: 12px;
+                font-weight: bold;
+                color: orangered;
+            }
+            .shyam #ram:hover {
+                color: greenyellow;
+                text-decoration: underline;
+                transition: 1.5s;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span>
+            <p class="p">Khata <span class="p2">Book</span></p>
+        </span>
+        <span class="shyam">
+            <a href="/" id="ram">Home</a>
+            <a href="/add" id="ram">Add</a>
+            <a href="/logout" id="ram" onclick="logout()">Logout</a>
+            <img src="/static/images/picturessss.jpg" alt="Network issue" id="pic">
+        </span>
+    </div>
+    <div class="photos">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+</body>
+<script>
+        function confirmLogout(event) {
+            if (!confirm('Do you really want to logout?')) {
+                event.preventDefault(); // Cancel the logout action
+            } else {
+                window.location.href = "/logout"; // Proceed with logout
+            }
+        }
+
+</script>
+</html>
